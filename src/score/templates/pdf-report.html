@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Rapport PDF - {{website.url}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="main container mx-auto px-4" style="margin-top: 20px">
+        <h1 class="text-2xl">Référentiel général d’écoconception de services numériques</h1>
+        <h1 class="text-xl">Équipe 40</h1><br>
+        <h2 class=""><span class="underline">Site web</span>: {{ website.url }}</h2>
+        <h2 class=""><span class="underline">Score</span>: <span class="">{{ website.score }}</span></h2>
+        <br><br>
+
+        <h1 class="text-xl font-bold">1. Stratégie</h1>
+        <br>
+        {% for criteria in strategy %}
+        <h2 class="text">{{criteria.number}} - {{criteria.critere}}</h2>
+            <p class="px-8 {{criteria.state.capitalize}}">État : {{criteria.state.capitalize}}</p>
+            <br>
+        {% endfor %}
+
+        <h1 class="text-xl font-bold">2. Spécifications</h1>
+        <br>
+        {% for criteria in specifications %}
+            <h2 class="text">{{criteria.number}} - {{criteria.critere}}</h2>
+            <p class="px-8 {{criteria.state.capitalize}}">État : {{criteria.state.capitalize}}</p>
+            <br>
+        {% endfor %}
+
+        <h1 class="text-xl font-bold">3. Architecture</h1>
+        <br>
+        {% for criteria in architecture %}
+            <h2 class="text">{{criteria.number}} - {{criteria.critere}}</h2>
+            <p class="px-8 {{criteria.state.capitalize}}">État : {{criteria.state.capitalize}}</p>
+            <br>
+        {% endfor %}
+
+        <h1 class="text-xl font-bold">4. UX/UI</h1>
+        <br>
+        {% for criteria in ui %}
+            <h2 class="text">{{criteria.number}} - {{criteria.critere}}</h2>
+            <p class="px-8 {{criteria.state.capitalize}}">État : {{criteria.state.capitalize}}</p>
+            <br>
+        {% endfor %}
+
+        <h1 class="text-xl font-bold">5. Contenus</h1>
+        <br>
+        {% for criteria in contents %}
+            <h2 class="text">{{criteria.number}} - {{criteria.critere}}</h2>
+            <p class="px-8 {{criteria.state.capitalize}}">État : {{criteria.state.capitalize}}</p>
+            <br>
+        {% endfor %}
+
+        <h1 class="text-xl font-bold">6. Frontend</h1>
+        <br>
+        {% for criteria in frontend %}
+            <h2 class="text">{{criteria.number}} - {{criteria.critere}}</h2>
+            <p class="px-8 {{criteria.state.capitalize}}">État : {{criteria.state.capitalize}}</p>
+            <br>
+        {% endfor %}
+
+        <h1 class="text-xl font-bold">7. Backend</h1>
+        <br>
+        {% for criteria in backend %}
+            <h2 class="text">{{criteria.number}} - {{criteria.critere}}</h2>
+            <p class="px-8 {{criteria.state.capitalize}}">État : {{criteria.state.capitalize}}</p>
+            <br>
+        {% endfor %}
+
+        <h1 class="text-xl font-bold">8. Hébergement</h1>
+        <br>
+        {% for criteria in hosting %}
+            <h2 class="text">{{criteria.number}} - {{criteria.critere}}</h2>
+            <p class="px-8 {{criteria.state.capitalize}}">État : {{criteria.state.capitalize}}</p>
+            <br>
+        {% endfor %}
+
+    </div>
+</body>
+</html>
